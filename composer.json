@@ -1,0 +1,11 @@
+{
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/adriangrabowski/clitypo.git"
+    }
+  ],
+  "require": {
+    "grabower/clitypo": "dev-master"
+  }
+}

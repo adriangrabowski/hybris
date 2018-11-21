@@ -1,0 +1,5 @@
+vendor
+output/*
+composer.lock
+.idea
+pages.txt
