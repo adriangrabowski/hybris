@@ -57,7 +57,7 @@ Next go to downloaded directory
 $ cd example.com
 ```
 
-Right now you are on something link git repository with removed all files.
+Right now you are on something like git repository with removed all files.
 
 ```bash
 $ git status
@@ -122,6 +122,21 @@ Code is written in PHP with composer libraries. To run this code you have to ins
 * git
 * php >= 5.6
 * composer
+
+### Instalation
+
+Clone Hybris repository
+```bash
+$ git clone https://github.com/adriangrabowski/hybris.git
+$ cd hybris
+```
+
+Install composer libraries
+```bash
+$ composer update
+```
+
+Done :)
 
 ### Usage
 
