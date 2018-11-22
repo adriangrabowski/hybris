@@ -13,17 +13,17 @@
         }
 
         $contentOfPage = @file_get_contents($hostname."/.git/");
-        return (strpos($contentOfPage, "Index of /.git") !== FALSE);
+        return (strpos($contentOfPage, "Index of") !== FALSE);
     }
 
-    $cmsOnly = false;
+    $cmdOnly = false;
 
     if(isset($argv[1])) {
         $hostname = $argv[1];
-        $cmsOnly = true;
+        $cmdOnly = true;
     }
 
-    if(!$cmsOnly) {
+    if(!$cmdOnly) {
         echo file_get_contents('logo');
     }
 
@@ -36,7 +36,7 @@
         exit;
     }
 
-    if(!$cmsOnly) {
+    if(!$cmdOnly) {
         $cliTypo->text()->empty_line();
         $hostname = $cliTypo->component()->read("Enter host name of web page");
     }
@@ -50,7 +50,7 @@
         $cliTypo->text()->color("[*] Git directory exist on web page", 'green');
     }
 
-    if(!$cmsOnly) {
+    if(!$cmdOnly) {
         $readyToRunAttack = $cliTypo->component()->decision("Are you sure to start attack?");
         if(!$readyToRunAttack) {
             exit;
@@ -71,7 +71,7 @@
 
     system('cd output/'.$hostname.'/ && git status | grep "deleted"');
 
-    if(!$cmsOnly) {
+    if(!$cmdOnly) {
         $readyToRestore = $cliTypo->component()->decision("Are you sure to start restore files?");
 
         if (!$readyToRestore) {
